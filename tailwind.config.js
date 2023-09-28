@@ -15,7 +15,9 @@ export default {
         'navy': "#000C66",
         'baby': "#7EC8E3"
       },
-      'white': "#FAFBF4"
+      'white': "#FAFBF4",
+      'purple': "#9747FF",
+      'inherit': 'inherit'
     },
     extend: {
       fontFamily: {

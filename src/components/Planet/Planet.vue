@@ -1,16 +1,42 @@
 <template>
     <div class="grid grid-cols-3 gap-6 px-12">
         <section class="col-span-2 flex justify-center">
-            <img class="h-[600px]" src="@/assets/planets/earth.svg" alt="Planeta">
+            <img class="h-[600px]" :src="`src/assets/planets/${planet.id}.svg`" alt="Planeta">
         </section>
-        <section>
-            <h1>EARTH</h1>
-            <p>La Tierra es tu hogar, un planeta único en el vasto universo. Con una diversidad asombrosa, te ofrece montañas majestuosas, vastos océanos, selvas exuberantes y desiertos misteriosos. Su atmósfera te brinda el aire que respiras y protege contra el frío del espacio.</p>
-            <label for="">
+        <section class="flex flex-col justify-center gap-6 text-white">
+            <h1 class="font-medium text-4xl">{{ planet.nombre}}</h1>
+            <p class="text-base font-medium">{{ planet.resumen }}</p>
+            <label class="flex gap-2 text-base font-medium">
                 <span>Source: </span>
-                <a href="#">Wikipedia</a>
-                <img src="@/assets/icons/arrow-top-right-on-square.svg" alt="">
+                <a class="underline" href="#">Wikipedia</a>
+                <img class="w-6 h6" src="@/assets/icons/arrow-top-right-on-square.svg" alt="">
             </label>
+            <Button @onClick="value = false" :class="[!value  ? 'bg-purple': '']">
+                <div class="w-full h-full flex justify-start gap-6">
+                    <span>01</span>
+                    <span>Características</span>
+                </div>
+            </Button>
+            <Button @onClick="value = true" :class="[value ? 'bg-purple': '']">
+                <div class="w-full h-full flex justify-start gap-6">
+                    <span>02</span>
+                    <span>Datos</span>
+                </div>
+            </Button>
         </section>
     </div>
 </template>
+
+<script setup>
+import Button from '../Button/Button.vue'
+import { ref } from 'vue'
+
+const value = ref(false)
+
+defineProps({
+    planet: Object
+})
+
+
+
+</script>
