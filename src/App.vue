@@ -8,10 +8,15 @@ import { ref } from 'vue';
 const planet =ref(null);
 planet.value = planetas.planetas[0]
 
+const searchPlanet = (planetSelected) => {
+  const planetaEncontrado = planetas.planetas.find(planeta => planeta.id === planetSelected);
+  planet.value = planetaEncontrado
+
+}
 
 </script>
 
 <template>
-  <Navbar/>
+  <Navbar @change="(planetSelected) => searchPlanet(planetSelected)"/>
   <Planet :planet="planet"/>
 </template>

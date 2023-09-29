@@ -4,14 +4,14 @@
             The Planets
         </section>
         <section class="planet-header__items">
-            <a href="#">Mercury</a>
-            <a href="#">Venus</a>
-            <a href="#">Earth</a>
-            <a href="#">Mars</a>
-            <a href="#">Jupiter</a>
-            <a href="#">Saturn</a>
-            <a href="#">Uranus</a>
-            <a href="#">Neptune</a>
+            <a href="#" @click="$emit('change', 'mercury')">Mercury</a>
+            <a href="#" @click="$emit('change', 'venus')">Venus</a>
+            <a href="#" @click="$emit('change', 'earth')">Earth</a>
+            <a href="#" @click="$emit('change', 'mars')">Mars</a>
+            <a href="#" @click="$emit('change', 'jupiter')">Jupiter</a>
+            <a href="#" @click="$emit('change', 'saturn')">Saturn</a>
+            <a href="#" @click="$emit('change', 'uranus')">Uranus</a>
+            <a href="#" @click="$emit('change', 'neptune')">Neptune</a>
         </section>
     </header>
 </template>

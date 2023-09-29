@@ -25,10 +25,20 @@
             </Button>
         </section>
     </div>
+    <Characteristics
+        v-if="!value"
+        :characteristics="planet.caracteristicas"
+    />
+    <Data
+        v-else
+        :data="planet.data"
+    />
 </template>
 
 <script setup>
 import Button from '../Button/Button.vue'
+import Data from '../Description/Data.vue'
+import Characteristics from '../Description/Characteristics.vue';
 import { ref } from 'vue'
 
 const value = ref(false)
